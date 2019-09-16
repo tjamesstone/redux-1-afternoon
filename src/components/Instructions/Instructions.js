@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import store, {ADD_INSTRUCTION, ADD_RECIPE} from './../../store'
+import store, {ADD_INSTRUCTION, ADD_RECIPE, CLEAR_STATE} from './../../store'
 
 class Instructions extends Component {
   constructor(props) {
@@ -37,6 +37,9 @@ class Instructions extends Component {
   create() {
     store.dispatch({
       type: ADD_RECIPE
+    })
+    store.dispatch({
+      type: CLEAR_STATE
     })
   }
   render() {

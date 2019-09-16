@@ -9,8 +9,8 @@ class Name extends Component {
     super(props);
     const reduxState = store.getState()
     this.state = {
-      name: reduxState.name,
-      category: reduxState.category
+      name: reduxState.recipeName,
+      category: reduxState.recipeCategory
     };
   }
   handleNameChange(nameVal) {

@@ -13,11 +13,11 @@ class Instructions extends Component {
   }
   componentDidMount(){
     store.subscribe(() =>{
-      const reduxState = store.getState(
+      const reduxState = store.getState()
         this.setState({
           instructions: reduxState.instructions
         })
-      )
+      
     })
   }
   handleChange(val) {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import './Author.css';
-import store, {UPDATE_AUTHOR_FIRST_NAME, UPDATE_AUTHOR_LAST_NAME} from '/Users/tatestone/Desktop/DevMountain/Week6/redux-1-afternoon/src/store.js'
+import store, {UPDATE_AUTHOR_FIRST, UPDATE_AUTHOR_LAST} from './../../store'
 
 
 class Author extends Component {
@@ -27,11 +27,11 @@ class Author extends Component {
   }
   saveChanges() {
     store.dispatch({
-      type: UPDATE_AUTHOR_FIRST_NAME,
+      type: UPDATE_AUTHOR_FIRST,
       payload: this.state.authorFirst
     })
     store.dispatch({
-      type: UPDATE_AUTHOR_LAST_NAME,
+      type: UPDATE_AUTHOR_LAST,
       payload: this.state.authorLast
     })
   }

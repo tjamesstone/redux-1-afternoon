@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Name.css";
-import store, {UPDATE_RECIPE_NAME, UPDATE_RECIPE_CATEGORY} from '/Users/tatestone/Desktop/DevMountain/Week6/redux-1-afternoon/src/store.js'
+import store, {UPDATE_RECIPE_NAME, UPDATE_RECIPE_CATEGORY} from './../../store'
 
 
 class Name extends Component {

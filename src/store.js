@@ -5,8 +5,8 @@ import {createStore} from 'redux'
 const initialState = {
     recipeName: '',
     recipeCategory: '',
-    authorFirstName: '',
-    authorLastName: '',
+    authorFirst: '',
+    authorLast: '',
     ingredients: [],
     instructions: [],
     recipes: []
@@ -15,8 +15,8 @@ const initialState = {
 //ACTION CONSTS
 export const UPDATE_RECIPE_NAME = 'UPDATE_RECIPE_NAME'
 export const UPDATE_RECIPE_CATEGORY = 'UPDATE_RECIPE_CATEGORY'
-export const UPDATE_AUTHOR_FIRST_NAME = 'UPDATE_AUTHOR_FIRST_NAME'
-export const UPDATE_AUTHOR_LAST_NAME = 'UPDATE_AUTHOR_LAST_NAME'
+export const UPDATE_AUTHOR_FIRST = "UPDATE_AUTHOR_FIRST"
+export const UPDATE_AUTHOR_LAST = "UPDATE_AUTHOR_LAST"
 export const ADD_INGREDIENT = 'ADD_INGREDIENT'
 export const ADD_INSTRUCTION = 'ADD_INSTRUCTION'
 export const ADD_RECIPE = 'ADD_RECIPE'
@@ -30,10 +30,10 @@ function reducer(state = initialState, action) {
             return {...state, name: payload}
         case UPDATE_RECIPE_CATEGORY:
             return {...state, category: payload}
-        case UPDATE_AUTHOR_FIRST_NAME:
-            return {...state, authorFirstName: payload}
-        case UPDATE_AUTHOR_LAST_NAME:
-            return {...state, authorLastName: payload}
+        case UPDATE_AUTHOR_FIRST:
+            return {...state, authorFirst: payload}
+        case UPDATE_AUTHOR_LAST:
+            return {...state, authorLast: payload}
         case ADD_INGREDIENT:
             const newIngredients = [...state.ingredients, payload]
             return {...state, ingredients: newIngredients}
@@ -41,8 +41,8 @@ function reducer(state = initialState, action) {
             const newInstructions = [...state.instructions, payload]
             return {...state, instructions: newInstructions}
         case ADD_RECIPE:
-            const {name, category, authorFirstName, authorLastName, ingredients, instructions} = state
-            const recipe = {name, category, authorFirstName, authorLastName, ingredients, instructions}
+            const {name, category, authorFirst, authorLast, ingredients, instructions} = state
+            const recipe = {name, category, authorFirst, authorLast, ingredients, instructions}
             const newRecipes = [...state.recipes, recipe]
             return{...state, recipes: newRecipes}
         default:
